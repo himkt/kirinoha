@@ -19,3 +19,5 @@
 .*
 !.gitignore
 
+*.xlsx
+!/vendor/dataset/.keep
