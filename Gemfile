@@ -47,3 +47,5 @@ end
 
 gem 'roo'
 gem 'json'
+
+gem 'activerecord-import'

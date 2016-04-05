@@ -10,7 +10,7 @@ class CreateSubjects < ActiveRecord::Migration
       t.string :location
       t.string :instructors
       t.text :info
-      t.binary :ca
+      t.boolean :ca
       t.text :condition
       t.string :alternative
 

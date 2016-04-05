@@ -10,7 +10,7 @@ one:
   location: MyString
   instructors: MyString
   info: MyText
-  ca: 
+  ca: false
   condition: MyText
   alternative: MyString
 
@@ -24,6 +24,6 @@ two:
   location: MyString
   instructors: MyString
   info: MyText
-  ca: 
+  ca: false
   condition: MyText
   alternative: MyString

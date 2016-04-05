@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405082146) do
+ActiveRecord::Schema.define(version: 20160405224712) do
 
   create_table "subjects", force: :cascade do |t|
     t.string   "code"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20160405082146) do
     t.string   "location"
     t.string   "instructors"
     t.text     "info"
-    t.binary   "ca"
+    t.boolean  "ca"
     t.text     "condition"
     t.string   "alternative"
     t.datetime "created_at",  null: false
