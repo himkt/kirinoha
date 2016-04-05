@@ -48,6 +48,8 @@ namespace :text do
     fname = Dir.glob("vendor/dataset/kdb_*?.xlsx")[0]
     raise Exception.new("\n\nXLSX file not found. Please download from https://kdb.tsukuba.ac.jp\n\n") unless fname
 
+    subjects = []
+
     data = Roo::Excelx.new(fname)
     data.each_with_index do |arr, index|
 
@@ -88,8 +90,6 @@ namespace :text do
       ## [string] -> string
       daytimes = daytime_list.join(' ')
 
-      p daytimes
-
       # instructors
       instructor_string = instructor_string || ''
 
@@ -101,20 +101,30 @@ namespace :text do
       ## value takes 0 or 1
       ca_bool = ca.eql?(CA) ? 1 : 0
 
-      # Subject.make(
-      #   code: code,
-      #   title: title,
-      #   credits: credits,
-      #   grades: grades,
-      #   terms: terms,
-      #   daytimes: daytimes,
-      #   location: location,
-      #   instructors: instructors,
-      #   info: "#{description}\n#{notion}",
-      #   ca: ca_bool,
-      #   condition: condition,
-      #   alternative: alternative
-      # )
+      subjects << {
+        code: code,
+        title: title,
+        credits: credits,
+        grades: grades,
+        terms: terms,
+        daytimes: daytimes,
+        location: location,
+        instructors: instructors,
+        info: "#{description}\n#{notion}",
+        ca: ca_bool,
+        condition: condition,
+        alternative: alternative
+      }
+    end
+
+    begin
+      output = open('vendor/dataset/subjects.json', 'w')
+      output.puts JSON.generate(subjects)
+      output.close
+      puts 'Successfully create subjects.json'
+      puts 'see vendor/dataset/subjects.json'
+    rescue => e
+      raise e
     end
   end
 end
