@@ -21,3 +21,5 @@
 
 *.xlsx
 !/vendor/dataset/.keep
+
+*.json
