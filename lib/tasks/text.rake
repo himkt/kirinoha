@@ -26,13 +26,19 @@ def decomp_grade(grade_string)
 end
 
 
+# TODO: more useful decomp
 def decomp_term(term_string)
-  return term_string
+
+  term_list = term_string.split(/\n/)
+  return term_list
 end
 
 
+# TODO: more useful decomp
 def decomp_daytime(daytime_string)
-  return daytime_string
+
+  daytime_list = daytime_string.split(/\n/)
+  return daytime_list
 end
 
 
@@ -42,16 +48,12 @@ namespace :text do
     fname = Dir.glob("vendor/dataset/kdb_*?.xlsx")[0]
     raise Exception.new("\n\nXLSX file not found. Please download from https://kdb.tsukuba.ac.jp\n\n") unless fname
 
-
-    tm = []
-
     data = Roo::Excelx.new(fname)
     data.each_with_index do |arr, index|
 
       next if index <= 4 || arr.size != 15
 
-      code, title, _, credits, grade_string, term_string, daytimes, location, instructor_string, description, notion, ca, condition, alternative, _ = arr
-      tm << term_string
+      code, title, _, credits, grade_string, term_string, daytime_string, location, instructor_string, description, notion, ca, condition, alternative, _ = arr
 
 
       # grade
@@ -73,18 +75,20 @@ namespace :text do
       term_list = decomp_term(term_string)
       ## composition
       ## [string] -> string
-      terms = term_list#.join(' ')
+      terms = term_list.join(' ')
 
       # daytime
 
       ## decomposition
       ## string -> [string]
+
       daytime_string = daytime_string || ''
-      daytime_list = decomp_daytime(daytime_list)
+      daytime_list = decomp_daytime(daytime_string)
       ## composition
       ## [string] -> string
-      daytimes = daytime_list#.join(' ')
+      daytimes = daytime_list.join(' ')
 
+      p daytimes
 
       # instructors
       instructor_string = instructor_string || ''
@@ -112,6 +116,5 @@ namespace :text do
       #   alternative: alternative
       # )
     end
-    p tm
   end
 end
