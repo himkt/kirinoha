@@ -133,7 +133,10 @@ Roo::Excelx.new(fname).each_with_index do |arr, index|
   )
 end
 
+i = 1
+
 subjects.in_groups_of(BATCH_SIZE, false) {|arr|
-  p arr
   Subject.import arr
+  puts "iter: #{i}"
+  i += 1
 }
