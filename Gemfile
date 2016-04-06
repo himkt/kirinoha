@@ -49,3 +49,5 @@ gem 'roo'
 gem 'json'
 
 gem 'activerecord-import'
+
+gem 'search_cop'
