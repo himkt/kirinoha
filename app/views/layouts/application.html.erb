@@ -13,14 +13,9 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-dark bg-inverse">
-      <div class="container">
-        <a class="navbar-brand" href="/">Kirinoha</a>
-        <ul class="nav navbar-nav pull-right">
-          <li class="nav-item"><a class="nav-link disabled" href="/">科目検索</a></li>
-          <ul>
-      </div>
-    </nav>
+		<%= render 'layouts/header' %>
     <%= yield %>
+		<%= render 'layouts/footer' %>
   </body>
+
 </html>
