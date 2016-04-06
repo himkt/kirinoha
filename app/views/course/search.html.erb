@@ -1,10 +1,15 @@
-<h1>Search Results</h1>
-<h2>検索ヒット: <%= @count %>件</h2>
+<div class="col-lg-8 col-lg-offset-2 landing-header">
+  <div class="text-center">
+    <h1>Search Results</h1>
+    <h2>検索ヒット: <%= @count %>件</h2>
+  </div>
+  <ul>
+    <% @results_by_page.each do |subject| %>
+      <li><a href="/course/detail/<%= subject['code'] %>"><%= subject['title'] %></a></li>
+    <% end %>
+  </ul>
 
-<ul>
-<% @results_by_page.each do |subject| %>
-  <li><a href="/course/detail/<%= subject['code'] %>"><%= subject['title'] %></a></li>
-<% end %>
-</ul>
-
-<%= paginate @results_by_page%>
+  <div class="text-center">
+    <%= paginate @results_by_page%>
+  </div>
+</div>
