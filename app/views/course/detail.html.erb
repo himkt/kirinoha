@@ -1,1 +1,18 @@
-<%= @result.code %>
+<div class="container">
+  <div class="panel panel-success">
+    <div class="panel-heading"><%= @result.title %></div>
+    <div class="panel-body">
+      <% @result.info.split(/\n/).each do |memo| %>
+        <p><%= memo %><p>
+      <% end %>
+    </div>
+    <!-- List group -->
+    <ul class="list-group">
+      <li class="list-group-item">科目番号: <%= @result.code %></li>
+      <li class="list-group-item">開設学期: <%= @result.terms %></li>
+      <li class="list-group-item">曜日時限: <%= @result.daytimes %></li>
+      <li class="list-group-item">担当教員: <%= @result.instructors %></li>
+      <li class="list-group-item">授業教室: <%= @result.location %></li>
+    </ul>
+  </div>
+</div>
