@@ -15,4 +15,13 @@ class Subject < ActiveRecord::Base
     options :grades => :fulltext
     options :location => :fulltext
   end
+
+  def self.find_by_keyword(keyword)
+    return Subject.search(keyword)
+  end
+
+  def self.detail(code)
+    result = Subject.where(code: code)
+    @result = result
+  end
 end
