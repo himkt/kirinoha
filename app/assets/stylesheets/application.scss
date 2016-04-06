@@ -1,0 +1,62 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import"https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff|Source+Sans+Pro:300";
+@charset "UTF-8";
+
+.jumbotron{
+  margin: auto;
+  width: 60%;
+  padding-top: 30px;
+  background-image: image-url('logo190.gif');
+  height: 190px;
+  width: 190px;
+}
+
+
+body{
+  font-family:"メイリオ",Meiryo,Hiragino Kaku Gothic Pro,MS PGothic,"M+ 1P",sans-serif
+  ;min-width:500px
+}
+
+h1,h2,h3{
+  margin-top:25.6px;
+  margin-top:1.6rem;
+  margin-bottom:25.6px;
+  margin-bottom:1.6rem
+}
+
+p{
+  line-height:25.6px;line-height:1.6rem
+}
+
+.navbar{
+  border-radius:0
+}
+
+.bg-inverse{
+  background:#1e2832
+}
+
+.landing-header{
+  margin-top: 5%;
+}
+
+.form-control{
+  margin: 2%;
+}
