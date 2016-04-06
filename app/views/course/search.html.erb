@@ -1,0 +1,10 @@
+<h1>Search Results</h1>
+<h2>検索ヒット: <%= @count %>件</h2>
+
+<ul>
+<% @results_by_page.each do |subject| %>
+  <li><a href="/course/detail/<%= subject['code'] %>"><%= subject['title'] %></a></li>
+<% end %>
+</ul>
+
+<%= paginate @results_by_page%>

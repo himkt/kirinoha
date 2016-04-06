@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Kirinoha</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Kirinoha</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<%= yield %>
-
-</body>
+    <nav class="navbar navbar-dark bg-inverse">
+      <div class="container">
+        <a class="navbar-brand" href="/">Kirinoha</a>
+        <ul class="nav navbar-nav pull-right">
+          <li class="nav-item"><a class="nav-link disabled" href="/">科目検索</a></li>
+          <ul>
+      </div>
+    </nav>
+    <%= yield %>
+  </body>
 </html>
