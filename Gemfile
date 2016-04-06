@@ -59,3 +59,6 @@ gem 'json'
 gem 'activerecord-import'
 
 gem 'search_cop'
+gem 'kaminari'
+
+gem 'bootstrap-sass', '~> 3.3.6'
