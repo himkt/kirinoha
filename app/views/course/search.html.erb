@@ -9,14 +9,11 @@
     <a href="/course/detail/<%= subject['code'] %>" class="list-group-item">
       <h3 class="list-group-item-heading"><%= subject['title'] %></h3>
       <p class="list-group-item-text" style="color: #666666"><%= subject['info'].slice(0..50) %>...</p>
-      <% unless subject['code'].blank? %>
-        <span class="label label-primary pull-xs-right">科目番号: <%= subject['code'] %></span>
+      <% unless subject['terms'].blank? %>
+        <span class="label label-success pull-xs-right">学期: <%= subject['terms'] %></span>
       <% end %>
       <% unless subject['credits'].blank? %>
-        <span class="label label-primary pull-xs-right"><%= subject['credits'] %>単位</span>
-      <% end %>
-      <% unless subject['location'].blank? %>
-        <span class="label label-primary pull-xs-right">教室: <%= subject['location'] %></span>
+        <span class="label label-success pull-xs-right"><%= subject['credits'] %>単位</span>
       <% end %>
       <% unless subject['instructors'].blank? %>
         <% if subject['instructors'].size > 30 %>
@@ -24,6 +21,12 @@
         <% else %>
           <span class="label label-primary pull-xs-right">教員: <%= subject['instructors'] %></span>
         <% end %>
+      <% end %>
+      <% unless subject['location'].blank? %>
+        <span class="label label-primary pull-xs-right">教室: <%= subject['location'] %></span>
+      <% end %>
+      <% unless subject['code'].blank? %>
+        <span class="label label-primary pull-xs-right">科目番号: <%= subject['code'] %></span>
       <% end %>
     </a>
   <% end %>
