@@ -3,7 +3,11 @@
     <div class="col-lg-6">
       <form action="search">
         <div class="input-group">
-					<input type="text" class="form-control" name="keyword" placeholder="プログラミング Ruby">
+          <% if session['keyword'].blank? %>
+            <input type="text" class="form-control" name="keyword" placeholder="プログラミング Ruby">
+          <% else %>
+            <input type="text" class="form-control" name="keyword" placeholder="プログラミング Ruby" value="<%= session['keyword']%>">
+          <% end %>
           <span class="input-group-btn">
             <button type="submit" class="btn btn-success">Search</button>
           </span>
