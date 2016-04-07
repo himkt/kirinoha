@@ -1,7 +1,18 @@
 # Kirinoha - 桐の葉
 
+## What is Kirinoha
+
 Kirinoha is __UNOFFICIAL__ Course Search System for students at University of Tsukuba.
 
+## More Information
+
+[This article](http://himkt.hatenablog.com/entry/2016/04/07/135817) describes about kirinoha.
+
+## For Use
+
+Kirinoha is available on [here](https://kirinoha.herokuapp.com/).
+
+I use heroku for production enviroment.
 
 ## Query Field
 
