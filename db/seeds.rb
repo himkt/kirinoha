@@ -117,6 +117,8 @@ Roo::Excelx.new(fname).each_with_index do |arr, index|
   ## value takes 0 or 1
   ca_bool = ca.eql?(CA) ? true : false
 
+  next if code =~ /^0[12]/
+
   subjects << Subject.new(
     :code => code,
     :title => title,
