@@ -1,14 +1,22 @@
 <div class="container">
-	<form class="form-inline">
-		<div class="form-group">
-			<input type="text" class="form-control" name="keyword" placeholder="title:数学 credits>=1">
-		</div>
-		<button type="submit" class="btn btn-success">Search</button>
-	</form>
+  <div class="row">
+    <div class="col-lg-6">
+      <form action="search">
+        <div class="input-group">
+          <input type="text" class="form-control" name="keyword" placeholder="title:数学 credits>=1 location:1E instructors:照井">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-success">Search</button>
+          </span>
+        </div><!-- /input-group -->
+      </form>
+    </div><!-- /.col-lg-6 -->
+    <div class="col-lg-6">
+    </div><!-- /.col-lg-6 -->
+  </div><!-- /.row -->
 
-	<div class="text-center">
-		<p><%= [(@page-1) * 25, 1].max %>~<%= [@page * 25, @count].min %> (<%= @count %>件中)</p>
-	</div>
+  <div class="text-center">
+    <h5><%= [(@page - 2) * 25, 1].max %>~<%= [[(@page - 1) * 25, 25].max, @count].min %> (<%= @count %>件中)</h5>
+  </div>
 
 	<% @results_by_page.each do |subject| %>
 		<a href="/course/detail/<%= subject['code'] %>" class="list-group-item">
