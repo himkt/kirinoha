@@ -17,7 +17,7 @@ class Subject < ActiveRecord::Base
   end
 
   def self.find_by_keyword(keyword)
-    return Subject.search(keyword)
+    return Subject.search(keyword.gsub('　', "\s"))
   end
 
   def self.detail(code)
