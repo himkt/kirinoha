@@ -1,3 +1,3 @@
 # Kirinoha - 桐の葉
 
-Kirinoha is Course Search System for students at University of Tsukuba.
+Kirinoha is __UNOFFICIAL__ Course Search System for students at University of Tsukuba.
