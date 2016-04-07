@@ -1,43 +1,53 @@
 <div class="container">
   <div class="panel panel-info">
-    <div class="panel-heading"><h2><%= @result.title %></h2>
-      <p>
-      <% unless @result['code'].blank? %>
-        <span class="label label-success pull-xs-right">科目番号: <%= @result['code'] %></span>
-      <% end %>
-      <% unless @result['terms'].blank? %>
-        <span class="label label-success pull-xs-right">学期: <%= @result['terms'] %></span>
-      <% end %>
-      <% unless @result['credits'].blank? %>
-        <span class="label label-success pull-xs-right"><%= @result['credits'] %>単位</span>
-      <% end %>
-      </p>
 
-      <p>
-      <% @result.daytimes.split(/\s/).each do |daytime| %>
-        <span class="label label-success pull-xs-right"><%= daytime %></span>
-      <% end %>
-      <% @result.location.split(/\s/).each do |location| %>
-          <span class="label label-success pull-xs-right"><%= location %></span>
-      <% end %>
-      </p>
+    <% unless @result %>
+      <div class="panel-heading"><h2>Not Found</h2>
+      <% else %>
 
-      <p>
-      <% @result.instructors.split(/\s/).each do |instructor| %>
-          <span class="label label-success pull-xs-right"><%= instructor %></span>
+        <div class="panel-heading"><h2><%= @result.title %></h2>
+          <p>
+          <% unless @result['code'].blank? %>
+            <span class="label label-success pull-xs-right">科目番号: <%= @result['code'] %></span>
+          <% end %>
+          <% unless @result['terms'].blank? %>
+            <span class="label label-success pull-xs-right">学期: <%= @result['terms'] %></span>
+          <% end %>
+          <% unless @result['credits'].blank? %>
+            <span class="label label-success pull-xs-right"><%= @result['credits'] %>単位</span>
+          <% end %>
+          </p>
+
+          <p>
+          <% unless @result.daytimes.blank? %>
+            <% @result.daytimes.split(/\s/).each do |daytime| %>
+              <span class="label label-success pull-xs-right"><%= daytime %></span>
+            <% end %>
+            <% @result.location.split(/\s/).each do |location| %>
+              <span class="label label-success pull-xs-right"><%= location %></span>
+            <% end %>
+          <% end %>
+          </p>
+
+          <p>
+          <% unless @result.instructors.blank? %>
+            <% @result.instructors.split(/\s/).each do |instructor| %>
+              <span class="label label-success pull-xs-right"><%= instructor %></span>
+            <% end %>
+          <% end %>
+          </p>
+        </div>
+
+        <div class="panel-body">
+          <% unless @result.info.blank? %>
+            <% @result.info.split(/\n|。/).each do |memo| %>
+              <h4><%= memo %><h4>
+                <% end %>
+              <% end %>
+        </div>
+
+        <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
       <% end %>
-      </p>
-
-    </div>
-
-    <div class="panel-body">
-      <% @result.info.split(/\n|。/).each do |memo| %>
-        <h4><%= memo %><h5>
-      <% end %>
-
-    </div>
+      </div>
   </div>
-
-  <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-</div>
