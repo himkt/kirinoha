@@ -8,10 +8,12 @@ class CourseController < ApplicationController
 
     # @results = Subject.search_by_keyword(params['keyword'])
     results = Subject.find_by_keyword(@keyword)
-    
+
     @page = page + 1
     @count = results.count
     @results_by_page = results.page(page)
+
+    session['keyword'] = @keyword
   end
 
   def detail
