@@ -26,12 +26,6 @@ You can use by
 title: プログラミング演習
 ```
 
-or
-
-```
-title: -プログラミング演習
-```
-
 ---
 
 - code
@@ -45,12 +39,6 @@ code: GE3
 ```
 
 or
-
-```
-code: -GE3
-```
-
-and also (precisely matching)
 
 ```
 code: GE31053
@@ -86,12 +74,6 @@ You can use by
 terms: 春A
 ```
 
-or
-
-```
-terms: -春A
-```
-
 ---
 
 - daytimes
@@ -102,12 +84,6 @@ You can use by
 
 ```
 daytimes: 月5
-```
-
-or
-
-```
-daytimes: -月5
 ```
 
 ---
@@ -122,12 +98,6 @@ You can use by
 instructors: 照井
 ```
 
-or
-
-```
-instructors: -松之木
-```
-
 ---
 
 - location
@@ -140,18 +110,6 @@ You can use by
 location: 7A
 ```
 
-or
-
-```
-location: -7A
-```
-
-and also (precisely match)
-
-```
-location: 7A205
-```
-
 ---
 
 - info
@@ -162,10 +120,4 @@ You can use by
 
 ```
 info: ラムダ計算
-```
-
-or
-
-```
-info: -ラムダ計算
 ```
