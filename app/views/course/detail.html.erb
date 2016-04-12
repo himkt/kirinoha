@@ -26,6 +26,8 @@
             <% @result.daytimes.split(/\s/).each do |daytime| %>
               <span class="label label-success pull-xs-right"><%= daytime %></span>
             <% end %>
+          <% end %>
+          <% unless @result.location.blank? %>
             <% @result.location.split(/\s/).each do |location| %>
               <span class="label label-success pull-xs-right"><%= location %></span>
             <% end %>
