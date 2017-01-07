@@ -1,5 +1,13 @@
 # Kirinoha - 桐の葉
 
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+[![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?maxAge=2592000)](https://rubygems.org/gems/kirinoha)
+[![GitHub issues](https://img.shields.io/github/issues/himkt/kirinoha.svg)](https://github.com/himkt/kirinoha/issues)
+[![GitHub stars](https://img.shields.io/github/stars/himkt/kirinoha.svg)](https://github.com/himkt/kirinoha/stargazers) 
+[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg?maxAge=2592000)](https://github.com/himkt/kirinoha) 
+[![GitHub commits](https://img.shields.io/github/commits-since/SubtitleEdit/subtitleedit/3.4.7.svg?maxAge=2592000)](https://github.com/himkt/kirinoha)
+
+
 ## What is Kirinoha
 
 Kirinoha is __UNOFFICIAL__ Course Search System for students at University of Tsukuba.
