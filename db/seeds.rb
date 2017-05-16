@@ -62,16 +62,18 @@ def decomp_daytime(daytime_string)
 end
 
 
-
 fname = Dir.glob("vendor/dataset/kdb_*?.xlsx")[0]
 raise Exception.new("\n\nXLSX file not found. Please download from https://kdb.tsukuba.ac.jp\n\n") unless fname
 
 subjects = []
 
 Roo::Excelx.new(fname).each_with_index do |arr, index|
-  next if index <= 4 || arr.size != 15
+  p arr.size, arr
 
-  code, title, _, credits, grade_string, term_string, daytime_string, location, instructor_string, description, notion, ca, condition, alternative, _ = arr
+  next if index <= 4 || arr.size != 17
+  puts index
+
+  code, title, _, credits, grade_string, term_string, daytime_string, location, instructor_string, description, notion, ca, condition, _, alternative, _, _, _ = arr
 
   # grade
 
@@ -133,6 +135,8 @@ Roo::Excelx.new(fname).each_with_index do |arr, index|
     :condition => condition,
     :alternative => alternative
   )
+
+  puts code, title
 end
 
 i = 1
